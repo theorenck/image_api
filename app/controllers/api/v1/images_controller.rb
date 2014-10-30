@@ -34,7 +34,7 @@ class API::V1::ImagesController < ApplicationController
   def destroy
     @image = Image.find(params[:id])
     @image.destroy
-    head :no_content
+    render nothing: true, status: :no_content
   end
   
   private

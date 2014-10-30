@@ -39,7 +39,7 @@ class API::V1::UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-    head :no_content
+    render nothing: true, status: :no_content
   end
 
   private
