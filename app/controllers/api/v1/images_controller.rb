@@ -26,7 +26,7 @@ class API::V1::ImagesController < ApplicationController
     if @image.save
       render json: @image, status: :created, location: [:api,:v1,@user,@image]
     else
-      render json: @image.errors, status: :unprocessable_entity
+      render json: {erros: @image.errors}, status: :unprocessable_entity
     end
   end
 

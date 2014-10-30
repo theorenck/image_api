@@ -21,7 +21,7 @@ class API::V1::UsersController < ApplicationController
     if @user.save
       render json: @user, status: :created, location: [:api,:v1,@user]
     else
-      render json: @user.errors, status: :unprocessable_entity
+      render json: {erros: @user.errors}, status: :unprocessable_entity
     end
   end
 
@@ -31,7 +31,7 @@ class API::V1::UsersController < ApplicationController
     if @user.update(user_params)
       head :no_content
     else
-      render json: @user.errors, status: :unprocessable_entity
+      render json: {erros: @user.errors}, status: :unprocessable_entity
     end
   end
 
