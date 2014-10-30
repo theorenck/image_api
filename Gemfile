@@ -18,6 +18,9 @@ gem 'rails_12factor', group: :production
 
 gem 'rails-api'
 
+# Use to provide support for Cross-Origin Resource Sharing (CORS) with Rack
+gem 'rack-cors', :require => 'rack/cors'
+
 gem 'spring', :group => :development
 
 # To use ActiveModel has_secure_password
