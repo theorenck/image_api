@@ -44,7 +44,7 @@ class API::V1::ImagesController < ApplicationController
 	  end
 
     def validate_content_type
-      unless [Mime::JPEG, Mime::PNG, Mime::GIF].include? request.content_type
+      unless [Mime::JPEG, Mime::PNG].include? request.content_type
         render nothing: true, status: :unsupported_media_type 
       end
     end
